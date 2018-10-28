@@ -5,9 +5,11 @@ import os
 from scrapy import cmdline
 
 if __name__ == '__main__':
-    os.remove('lianjia.csv')
-    cmdline.execute("scrapy crawl lianjia -t csv -o lianjia.csv --loglevel=INFO".split())
-    # cmdline.execute("scrapy crawl lianjia --loglevel=INFO".split())
+    # 输出csv格式
+    # os.remove('lianjia.csv')
+    # cmdline.execute("scrapy crawl lianjia -o lianjia.csv --loglevel=INFO".split())
+    # 输出json格式
+    cmdline.execute("scrapy crawl lianjia --loglevel=INFO".split())
 
 
 class LianjiaSpiderSpider(scrapy.Spider):
